@@ -44,6 +44,13 @@ namespace NetflixProject
                 Console.WriteLine(m);
             }
         }
+
+        /*public static Genre operator +(Genre c1, Genre c2)
+        {
+
+            return new Genre(c1.FindActionMovies() + c2.FindComedyMovies());
+        }*/
+
         public void FindActionMovies()
         {
             List<Movie> actionmovies = new List<Movie>();
