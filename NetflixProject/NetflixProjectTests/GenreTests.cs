@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NetflixProject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetflixProject
+namespace NetflixProject.Tests
 {
-    public enum Genres { Action, Comedy, Romance }
-    public class Genre : IEnumerable
+    [TestClass()]
+    public class GenreTests
     {
-        public Genre()
-        {
-        }
-        List<Movie> allmovies = new List<Movie>();
 
-        public void MakeAllMovieList()
+        [TestMethod()]
+        public void MakeAllMovieListTest()
         {
+            List<Movie> allmovies = new List<Movie>();
             allmovies.Add(new Movie() { category1 = Genres.Action, name = "Gladiator", duration = 153, rating = 8.5 });
             allmovies.Add(new Movie() { category1 = Genres.Action, name = "Batman", duration = 126, rating = 7.6 });
             allmovies.Add(new Movie() { category1 = Genres.Action, name = "The Hunger Games: Catching Fire", duration = 146, rating = 7.6 });
@@ -44,55 +43,40 @@ namespace NetflixProject
                 Console.WriteLine(m);
             }
         }
-        public void FindActionMovies()
+
+        [TestMethod()]
+        public void FindActionMoviesTest()
         {
-            List<Movie> actionmovies = new List<Movie>();
-            actionmovies = allmovies.FindAll(x => x.category1 == Genres.Action);
-            foreach (Movie a in actionmovies)
-            {
-                Console.WriteLine(a);
-            }
         }
-        public void FindComedyMovies()
+
+        [TestMethod()]
+        public void FindComedyMoviesTest()
         {
-            List<Movie> comedymovies = new List<Movie>();
-            comedymovies = allmovies.FindAll(x => x.category1 == Genres.Comedy);
-            foreach (Movie c in comedymovies)
-            {
-                Console.WriteLine(c);
-            }
+            Assert.Fail();
         }
-        public void FindRomanceMovies()
+
+        [TestMethod()]
+        public void FindRomanceMoviesTest()
         {
-            List<Movie> romanticmovies = new List<Movie>();
-            romanticmovies = allmovies.FindAll(x => x.category1 == Genres.Romance);
-            foreach (Movie r in romanticmovies)
-            {
-                Console.WriteLine(r);
-            }
+            Assert.Fail();
         }
-        public void FindRomanticComedies()
+
+        [TestMethod()]
+        public void FindRomanticComediesTest()
         {
-            List<Movie> romanticcomedies = new List<Movie>();
-            romanticcomedies = allmovies.FindAll(x => x.category1 == Genres.Comedy && x.category2 == Genres.Romance);
-            foreach (Movie rc in romanticcomedies)
-            {
-                Console.WriteLine(rc);
-            }
+            Assert.Fail();
         }
-        public IEnumerator GetEnumerator()
+
+        [TestMethod()]
+        public void GetEnumeratorTest()
         {
-            for (int i = 0; i < allmovies.Count; i++)
-            {
-                yield return allmovies[i];
-            }
+            Assert.Fail();
         }
-        public void JustMovieNames()
+
+        [TestMethod()]
+        public void JustMovieNamesTest()
         {
-            foreach (Movie moviename in allmovies)
-            {
-                Console.WriteLine(moviename.name);
-            }
+            Assert.Fail();
         }
     }
 }

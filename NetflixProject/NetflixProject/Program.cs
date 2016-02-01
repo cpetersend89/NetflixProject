@@ -11,15 +11,23 @@ namespace NetflixProject
         static void Main(string[] args)
         {
             Genre movies = new Genre();
-            //Movie m = new Movie();
-            
-            //m.SetRating();
+            Console.WriteLine("All Movies:\n");
+            movies.MakeAllMovieList();
+            Console.WriteLine("\nAction Movies:\n");
+            movies.FindActionMovies();
+            Console.WriteLine("\nComedy Movies:\n");
+            movies.FindComedyMovies();
+            Console.WriteLine("\nRomance Movies:\n");
+            movies.FindRomanceMovies();
+            Console.WriteLine("\nRomantic Comedies\n");
+            movies.FindRomanticComedies();
+            Console.WriteLine("\nCustom iterator returning only movie title:\n");
+            movies.JustMovieNames();
 
-            /*MovieTitles movie = new MovieTitles();
-            movie.MakeMovieList();
+            TvShow episodes = new TvShow();
+            episodes.CreateTitle();
+            episodes.MakeTvShowList();
 
-            Rating r = new Rating();
-            r.MakeRatingList();*/
 
             Console.ReadLine();
         }
